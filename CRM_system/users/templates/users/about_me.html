@@ -1,0 +1,12 @@
+{% extends 'users/base_auth.html' %}
+
+{% block title %}CRM - {{ user.first_name }}{{ user.last_name }}{% endblock %}
+
+{% block body %}
+    <h1>Обо мне: </h1>
+    <p>Username: {{ user.username }}</p>
+    <form action="{% url 'users:logout' %}" method="post">
+        {% csrf_token %}
+        <button class="btn">Выйти</button>
+    </form>
+{% endblock %}
