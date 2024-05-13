@@ -10,12 +10,13 @@ class RegisterCreationForm(UserCreationForm):
 
     class Meta:
         model = get_user_model()
-        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'phone',]
+        fields = ['username', 'email', 'first_name', 'surname', 'last_name', 'password1', 'password2', 'phone',]
         labels = {
             'email': 'E-mail',
             'first_name': 'Имя',
             'last_name': 'Фамилия',
             'phone': 'Телефон',
+            'surname': 'Отчество',
         }
 
         widgets = {
@@ -23,6 +24,7 @@ class RegisterCreationForm(UserCreationForm):
             'first_name': forms.TextInput(attrs={'class': 'input-text'}),
             'last_name': forms.TextInput(attrs={'class': 'input-text'}),
             'phone': forms.TextInput(attrs={'class': 'input-text'}),
+            'surname': forms.TextInput(attrs={'class': 'input-text'}),
         }
 
     def clean_email(self):
