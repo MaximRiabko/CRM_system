@@ -1,17 +1,22 @@
 {% extends 'users/base_auth.html' %}
 
-{% block title %}CRM - {{ user.first_name }}{{ user.last_name }}{% endblock %}
+{% block title %}CRM - {{ user.first_name }} {{ user.last_name }}{% endblock %}
 
 {% block body %}
-    <h1>Обо мне: </h1>
-    <p>Логин: {{ user.username }}</p>
-    <p>Имя: {{ user.first_name }}</p>
-    <p>Фамилия: {{ user.last_name }}</p>
-    <p>Отчество: {{ user.surname }}</p>
-    <p>Телефон: {{ user.phone }}</p>
-    <p>Почта: {{ user.email }}</p>
-    <form action="{% url 'users:logout' %}" method="post">
-        {% csrf_token %}
+<div class="header_box">
+    <div class="header_box_name">SkillboxCRM</div>
+</div>
+<div class="about_me_profile">Профиль</div>
+    <div class="about_me">
+        <p>Логин: {{ user.username }}</p>
+        <p>Имя: {{ user.first_name }}</p>
+        <p>Фамилия: {{ user.last_name }}</p>
+        <p>Отчество: {{ user.surname }}</p>
+        <p>Телефон: {{ user.phone }}</p>
+        <p>Почта: {{ user.email }}</p>
+        <form action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
         <button class="btn">Выйти</button>
-    </form>
+        </form>
+    </div>
 {% endblock %}
