@@ -8,10 +8,11 @@
            <form method="post">
                {% csrf_token %}
                {{ form.as_p }}
-               <div class="wrapper">
-                   <button type="submit" class="btn"><span>Войти</span></button>
-               </div>
+               <button type="submit" class="register_btn"><span>Вход</span></button>
            </form>
        </div>
     </div>
+<div class="header_box" style="margin-top: 20%;">
+    <div class="header_box_text">© SkillboxSRM - данное веб-приложение создано в учебных целях. Данное CRM не является коммерческим продуктом!</div>
+</div>
 {% endblock %}

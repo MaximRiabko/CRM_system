@@ -3,10 +3,17 @@
 {% block title %}CRM - Register{% endblock %}
 
 {% block body %}
-    <h1>Регистрация</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
+<h1 class="greetings_login">Добро пожаловать в CRM 👋</h1>
+    <div class="register">
+       <div class="form">
+           <form method="post">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <button type="submit" class="register_btn"><span>Регистрация</span></button>
+           </form>
+       </div>
+    </div>
+<div class="header_box">
+    <div class="header_box_text">© SkillboxSRM - данное веб-приложение создано в учебных целях. Данное CRM не является коммерческим продуктом!</div>
+</div>
 {% endblock %}
