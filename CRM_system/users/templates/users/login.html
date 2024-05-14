@@ -1,12 +1,17 @@
 {% extends 'users/base_auth.html' %}
-
 {% block title %}CRM - Login{% endblock %}
 
 {% block body %}
-    <h1>Login</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
+<h1 class="greetings_login">C возвращением в CRM ❤️</h1>
+   <div class="login">
+       <div class="form">
+           <form method="post">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <div class="wrapper">
+                   <button type="submit" class="btn"><span>Войти</span></button>
+               </div>
+           </form>
+       </div>
+    </div>
 {% endblock %}

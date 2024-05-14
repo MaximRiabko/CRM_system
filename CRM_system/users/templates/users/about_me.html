@@ -4,7 +4,12 @@
 
 {% block body %}
     <h1>Обо мне: </h1>
-    <p>Username: {{ user.username }}</p>
+    <p>Логин: {{ user.username }}</p>
+    <p>Имя: {{ user.first_name }}</p>
+    <p>Фамилия: {{ user.last_name }}</p>
+    <p>Отчество: {{ user.surname }}</p>
+    <p>Телефон: {{ user.phone }}</p>
+    <p>Почта: {{ user.email }}</p>
     <form action="{% url 'users:logout' %}" method="post">
         {% csrf_token %}
         <button class="btn">Выйти</button>
