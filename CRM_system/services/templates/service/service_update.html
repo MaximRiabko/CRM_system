@@ -1,0 +1,12 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}CRM - Редактирование услуги{% endblock %}
+
+{% block body %}
+    <div class="service_text">Редактирование услуги</div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Редактировать</button>
+    </form>
+{% endblock %}

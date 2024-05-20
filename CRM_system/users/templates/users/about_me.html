@@ -1,11 +1,8 @@
-{% extends 'users/base_auth.html' %}
+{% extends 'users/base_main.html' %}
 
 {% block title %}CRM - {{ user.first_name }} {{ user.last_name }}{% endblock %}
 
 {% block body %}
-<div class="header_box">
-    <div class="header_box_name">SkillboxCRM</div>
-</div>
 <div class="about_me_profile">Профиль</div>
     <div class="about_me">
         <p>Логин: {{ user.username }}</p>

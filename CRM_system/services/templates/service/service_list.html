@@ -1,0 +1,12 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}СRM - Список услуг{% endblock %}
+
+{% block body %}
+    <div class="service_text">Список предоставляемых услуг</div>
+    {% for s in service %}
+        <div>{{ s.name }}</div>
+        <div>{{ s.description }}</div>
+        <div>{{ s.price }}</div>
+    {% endfor %}
+{% endblock %}

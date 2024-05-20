@@ -9,6 +9,9 @@ class Service(models.Model):
     description = models.TextField()
     price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
 
+    def get_absolute_url(self):
+        return f'/service/detail/{self.id}'
+
 class AdvertisingСompany(models.Model):
     """
     Модель для создания рекламной компании

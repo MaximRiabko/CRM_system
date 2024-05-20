@@ -1,0 +1,10 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}CRM - ({{ service.name }}) детальная страница{% endblock %}
+
+{% block body %}
+    <div class="service_text">Детальная страница услуги: {{ service.name }}</div>
+    Название услуги: {{ service.name }}
+    Описание услуги: {{ service.description }}
+    Стоимость услуги: {{ service.price }}
+{% endblock %}

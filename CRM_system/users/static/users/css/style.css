@@ -53,6 +53,12 @@ body {
     margin-bottom: 25%;
 }
 
+.service_text {
+    text-align: center;
+    font-size: 32px;
+    font-width: 400px;
+}
+
 .footer_box {
     border-top: 2px solid #470027;
     width: 100%;
