@@ -109,6 +109,71 @@ body {
     font-width: 400px;
 }
 
+.box_detail_text {
+    text-align: center;
+    font-size: 32px;
+    font-width: 400px;
+    padding-bottom: 10%;
+    padding-top: 4%;
+}
+
+.box_detail_box {
+    border: 1px solid #470027;
+    border-radius: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.box_detail_box_name {
+    font-family: "Pacifico", cursive;
+    font-weight: 400px;
+    font-size: 55px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #fff
+}
+
+.box_detail_box_description {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border: 1px solid #470027;
+    border-radius: 10px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.box_detail_box_description_text {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 3%;
+    padding-right: 3%;
+
+}
+
+.box_detail_box_price {
+    font-family: "Kelly Slab", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
 .footer_box {
     border-top: 2px solid #470027;
     width: 100%;
@@ -313,3 +378,140 @@ body {
   font-size: 25px;
 }
 
+/* Кнопка для создания новой записи */
+.create_btn {
+  position: absolute;
+  top: 26%;
+  right: 0;
+  left: 0;
+  display: block;
+  width: 240px;
+  padding: 40px;
+  margin: 0 auto;
+  border: 0;
+  cursor: pointer;
+  border-radius: 2px;
+  transform: translateY(-50%);
+  box-shadow: 0 10px 20px -5px #470027;
+  overflow: hidden;
+}
+
+.create_btn:before,
+.create_btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.create_btn:before {
+  transform: scale(1);
+  background-image: url("https://himalayasingh.github.io/button-hover-effect-1/img/bg.jpg");
+  background-size: cover;
+  transition: 0.3s ease transform;
+  z-index: 1;
+}
+
+.create_btn:after {
+  background-color: #470027;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.create_btn div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.create_btn div:before,
+.create_btn div:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  padding: 25px 0;
+  transition: 0.3s ease all;
+}
+
+.create_btn div:before {
+  content: "Создать?";
+  letter-spacing: 0;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.create_btn div:after {
+  content: "Создавай !";
+  letter-spacing: -10px;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.create_btn:hover:before {
+  transform: scale(1.3);
+}
+
+.create_btn:hover div:before {
+  letter-spacing: 3px;
+  opacity: 0;
+  transform: scale(4);
+}
+
+.create_btn:hover div:after {
+  letter-spacing: 0;
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Кнопка для детальной страницы на удаление и редактирование */
+
+.btn_detail_templates {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    text-decoration: none;
+    color: #fff;
+  --c:  #470027; /* the color*/
+
+  box-shadow: 0 0 0 .1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background:
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+.btn_detail_templates:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+.btn_detail_templates:active {
+  box-shadow: 0 0 9e9q inset #0009;
+  background-color: var(--c);
+  color: #fff;
+}
+
+.btn_detail_templates {
+  font-family: system-ui, sans-serif;
+  font-size: 3.5rem;
+  cursor: pointer;
+  padding: .1em .6em;
+  font-weight: bold;
+  border: none;
+}

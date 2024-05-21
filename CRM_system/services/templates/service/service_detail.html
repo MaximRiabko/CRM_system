@@ -3,10 +3,15 @@
 {% block title %}CRM - ({{ service.name }}) детальная страница{% endblock %}
 
 {% block body %}
-    <div class="service_text">Детальная страница услуги: {{ service.name }}</div>
-    Название услуги: {{ service.name }}
-    Описание услуги: {{ service.description }}
-    Стоимость услуги: {{ service.price }}
-    <a href="{% url 'service:update_service' pk=service.pk %}">Редактирование</a>
-    <a href="{% url 'service:update_service' pk=service.pk %}">Удалить</a>
+    <div class="box_detail_text">Детальная страница услуги: {{ service.name }}</div>
+        <div class="box_detail_box">
+            <div class="box_detail_box_name">Название услуги: {{ service.name }}</div>
+            <div class="box_detail_box_description">Описание:
+                <div class="box_detail_box_description_text">{{ service.description }}</div>
+            </div>
+            <div class="box_detail_box_price">Стоимость услуги: {{ service.price }}</div>
+            <a href="{% url 'service:update_service' pk=service.pk %}" class="btn_detail_templates">📝 Редактировать</a>
+            <a href="{% url 'service:update_service' pk=service.pk %}" class="btn_detail_templates" style="--c:#8b0000">❌ Удалить</a>
+        </div>
+        <br><br>
 {% endblock %}

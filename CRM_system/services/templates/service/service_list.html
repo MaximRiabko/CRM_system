@@ -4,6 +4,10 @@
 
 {% block body %}
     <div class="box_service_text">Список предоставляемых услуг: 📜</div>
+    <a href="{% url 'service:create_service' %}" class="create_btn">
+        <div>
+        </div>
+    </a>
     {% for s in service %}
     <div class="box_service">
         <div class="box_service_name">{{ s.name }}</div>
