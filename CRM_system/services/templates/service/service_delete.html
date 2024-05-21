@@ -3,9 +3,10 @@
 {% block title %}CRM - ({{ service.name }}) удаление услуги{% endblock %}
 
 {% block body %}
-    <div class="service_text">Удаление услуги ❌</div>
+    <div class="service_text">Вы точно хотите удалить услугу '{{ service.name }}'? ❌</div>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Удалить</button>
+        <a href="{% url 'service:detail_service' pk=service.pk %}">Нет</a>
     </form>
 {% endblock %}

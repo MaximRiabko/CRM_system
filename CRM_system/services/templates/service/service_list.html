@@ -3,10 +3,15 @@
 {% block title %}СRM - Список услуг{% endblock %}
 
 {% block body %}
-    <div class="service_text">Список предоставляемых услуг</div>
+    <div class="box_service_text">Список предоставляемых услуг: 📜</div>
     {% for s in service %}
-        <div>{{ s.name }}</div>
-        <div>{{ s.description }}</div>
-        <div>{{ s.price }}</div>
+    <div class="box_service">
+        <div class="box_service_name">{{ s.name }}</div>
+        <div class="box_service_description">{{ s.description }}</div>
+        <div class="box_service_price">Цена: {{ s.price }}</div>
+        <a class="btn" href="{% url 'service:detail_service' pk=s.pk %}"><span>Перейти</span></a>
+        <a class="btn" href="{% url 'service:delete_service' pk=s.pk %}" style="margin-top: 2%;"><span>Удалить</span></a>
+        <br><br>
+    </div>
     {% endfor %}
 {% endblock %}

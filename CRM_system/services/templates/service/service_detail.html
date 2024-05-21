@@ -7,4 +7,6 @@
     Название услуги: {{ service.name }}
     Описание услуги: {{ service.description }}
     Стоимость услуги: {{ service.price }}
+    <a href="{% url 'service:update_service' pk=service.pk %}">Редактирование</a>
+    <a href="{% url 'service:update_service' pk=service.pk %}">Удалить</a>
 {% endblock %}
