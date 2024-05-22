@@ -12,6 +12,15 @@ body {
     color: #fff;
 }
 
+.no_list {
+    text-align: center;
+    font-size: 64px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
 .header_box {
     background: #470027;
     width: 100%;
@@ -328,7 +337,7 @@ body {
 
 /* Кнопка услуг на детальную страницу */
 
-.btn {
+.btn_list {
   border: none;
   text-align: center;
   cursor: pointer;
@@ -345,12 +354,12 @@ body {
   margin-top: -30%;
 }
 
-.btn span {
+.btn_list span {
   position: relative;
   z-index: 1;
 }
 
-.btn:after {
+.btn_list:after {
   content: "";
   position: absolute;
   left: 0;
@@ -364,7 +373,7 @@ body {
   transform: translateX(-98%) translateY(-25%) rotate(45deg);
 }
 
-.btn:hover:after {
+.btn_list:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }

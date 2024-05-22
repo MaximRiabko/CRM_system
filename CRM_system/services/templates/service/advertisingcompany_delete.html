@@ -1,0 +1,13 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}CRM - ({{ service.name }}) удаление услуги{% endblock %}
+
+{% block body %}
+    <div class="service_text">Вы точно хотите удалить услугу '{{ service.name }}'? ❌</div>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-blow"><span>Удалить</span></button>
+        <a class="btn btn-blow" href="#"><span>Вернуться</span></a>
+    </form>
+    <div style="padding-top: 5%; padding-bottom: 25%"></div>
+{% endblock %}

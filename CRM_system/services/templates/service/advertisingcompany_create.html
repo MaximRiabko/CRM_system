@@ -1,0 +1,16 @@
+{% extends 'service/base_main.html' %}
+{% block title %}CRM - Создание рекламной компании{% endblock %}
+
+{% block body %}
+    <div class="service_text">Создание рекламной компании 🌁</div>
+        <div class="register">
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="service_create_btn"><span>Создать</span></button>
+                </form>
+            </div>
+        </div>
+        <br><br>
+{% endblock %}

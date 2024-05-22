@@ -1,0 +1,17 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}CRM - Редактирование компании{% endblock %}
+
+{% block body %}
+        <div class="service_text">Редактирование компании: {{ company.company_name }}</div>
+        <div class="register">
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="service_create_btn"><span>Изменить ✏️</span></button>
+                </form>
+            </div>
+        </div>
+        <br><br>
+{% endblock %}

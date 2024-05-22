@@ -1,0 +1,21 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}CRM - ({{ detail.company_name }}) детальная страница {% endblock %}
+
+{% block body %}
+    <div class="box_detail_text">Детальная страница компании: {{ detail.company_name }}</div>
+        <div class="box_detail_box">
+            <div class="box_detail_box_name">Название компании: {{ detail.company_name }}</div>
+            <div class="box_detail_box_description">Название услуги:
+                <div class="box_detail_box_description_text">{{ detail.advertised_service }}</div>
+            </div>
+            <div class="box_detail_box_description">Канал продвижения:
+                <div class="box_detail_box_description_text">{{ detail.promotion_channel }}</div>
+            </div>
+            <div class="box_detail_box_price">Бюджет: {{ detail.budget }}</div>
+            <br><br><br><br><br>
+            <a href="{% url 'service:company_detail' pk=advertisingcompany.pk %}" class="btn_detail_templates">📝 Редактировать</a>
+            <a href="#" class="btn_detail_templates" style="--c:#8b0000">❌ Удалить</a>
+        </div>
+        <br><br>
+{% endblock %}

@@ -9,6 +9,9 @@ class Service(models.Model):
     description = models.TextField()
     price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return f'/service/detail/{self.id}'
 
@@ -21,6 +24,9 @@ class AdvertisingСompany(models.Model):
     promotion_channel = models.CharField(max_length=255)
     budget = models.DecimalField(default=0, max_digits=8, decimal_places=2)
 
+    def __str__(self):
+        return self.company_name
+
 class Contract(models.Model):
     """
     Модель для создания контракта
@@ -31,6 +37,9 @@ class Contract(models.Model):
     date_conclusion = models.DateTimeField(auto_now_add=True)
     expiration_date = models.DateTimeField(auto_now_add=True)
     summ = models.DecimalField(default=0, max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return self.name_contract
 
 class PotentialProfile(models.Model):
     """

@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import (
     CreateView,
     ListView,
@@ -8,8 +7,35 @@ from django.views.generic import (
 )
 from django.urls import reverse_lazy
 
-from .forms import ServiceCreationForm
-from .models import Service
+from .forms import ServiceCreationForm, AdvertisingСompanyCreationForm
+from .models import Service, AdvertisingСompany
+
+class AdvertisingСompanyCreateView(CreateView):
+    form_class = AdvertisingСompanyCreationForm
+    template_name = "service/advertisingcompany_create.html"
+    success_url = reverse_lazy("service:company_list")
+
+class AdvertisingСompanyListView(ListView):
+    model = AdvertisingСompany
+    template_name = "service/advertisingcompany_list.html"
+    context_object_name = 'company'
+
+class AdvertisingСompanyDetailView(DetailView):
+    model = AdvertisingСompany
+    template_name = "service/advertisingcompany_detail.html"
+    context_object_name = 'detail'
+
+class AdvertisingСompanyUpdateView(UpdateView):
+    model = AdvertisingСompany
+    template_name = "service/advertisingcompany_update.html"
+    form_class = ServiceCreationForm
+    context_object_name = 'company'
+
+class AdvertisingСompanyDeleteView(DeleteView):
+    model = AdvertisingСompany
+    template_name = "service/advertisingcompany_delete.html"
+    success_url = reverse_lazy("service:company_list")
+
 
 class ServiceCreateView(CreateView):
     form_class = ServiceCreationForm
@@ -34,3 +60,4 @@ class ServiceDeleteView(DeleteView):
     model = Service
     template_name = "service/service_delete.html"
     success_url = reverse_lazy("service:list_service")
+

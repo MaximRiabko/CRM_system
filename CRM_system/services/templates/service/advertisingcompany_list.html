@@ -1,0 +1,24 @@
+{% extends 'service/base_main.html' %}
+
+{% block title %}СRM - Список услуг{% endblock %}
+
+{% block body %}
+    <div class="box_service_text">Список рекламных компаний: 📜</div>
+    <a href="{% url 'service:company_create' %}" class="create_btn">
+        <div>
+        </div>
+    </a>
+    {% for с in company %}
+    <div class="box_service">
+        <div class="box_service_name">{{ с.company_name }}</div>
+        <div class="box_service_description">{{ с.advertised_service }}</div>
+        <div class="box_service_price">{{ с.promotion_channel }}</div>
+        <div class="box_service_price">Бюджет: {{ с.budget }}</div>
+        <a class="btn_list" href="#"><span>Перейти</span></a>
+        <a class="btn_list" href="#" style="margin-top: 2%;"><span>Удалить</span></a>
+        <br><br>
+    </div>
+    {% empty %}
+        <div class="no_list">Ещё нет рекламных компаний</div>
+    {% endfor %}
+{% endblock %}
