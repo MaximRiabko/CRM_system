@@ -3,9 +3,14 @@
 
 {% block body %}
     <div class="service_text">Создание услуги 📋</div>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Создать</button>
-    </form>
+        <div class="register">
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="service_create_btn"><span>Создать</span></button>
+                </form>
+            </div>
+        </div>
+        <br><br>
 {% endblock %}

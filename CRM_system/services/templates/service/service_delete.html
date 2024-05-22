@@ -6,7 +6,8 @@
     <div class="service_text">Вы точно хотите удалить услугу '{{ service.name }}'? ❌</div>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Удалить</button>
-        <a href="{% url 'service:detail_service' pk=service.pk %}">Нет</a>
+        <button class="btn btn-blow"><span>Удалить</span></button>
+        <a class="btn btn-blow" href="{% url 'service:detail_service' pk=service.pk %}"><span>Вернуться</span></a>
     </form>
+    <div style="padding-top: 5%; padding-bottom: 25%"></div>
 {% endblock %}

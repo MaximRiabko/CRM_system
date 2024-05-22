@@ -3,12 +3,15 @@
 {% block title %}CRM - Редактирование услуги{% endblock %}
 
 {% block body %}
-    <div class="service_text">Редактирование услуги</div>
-        <div class="">
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="register_btn">Редактировать</button>
-            </form>
+        <div class="service_text">Редактирование услуги: {{ service.name }}</div>
+        <div class="register">
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="service_create_btn"><span>Изменить ✏️</span></button>
+                </form>
+            </div>
         </div>
+        <br><br>
 {% endblock %}
